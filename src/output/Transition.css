@@ -1,0 +1,17 @@
+.transition {
+    width: 100%;
+    height: 100%;
+    transition-property: opacity, transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 1;
+    transform: none;
+  }
+  
+  .transition-fade.idle { opacity: 1; }
+  .transition-fade.entering { opacity: 0; }
+  
+  .transition-slide-up.idle { transform: translateY(0); opacity: 1; }
+  .transition-slide-up.entering { transform: translateY(20%); opacity: 0; }
+  
+  .transition-zoom.idle { transform: scale(1); opacity: 1; }
+  .transition-zoom.entering { transform: scale(0.96); opacity: 0; }

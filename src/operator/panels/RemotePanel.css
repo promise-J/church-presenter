@@ -1,0 +1,88 @@
+.remote-panel {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+    overflow-y: auto;
+  }
+  
+  .remote-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .section-title {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-2);
+    font-weight: 600;
+  }
+  
+  .remote-help {
+    font-size: 12px;
+    color: var(--text-2);
+    line-height: 1.5;
+  }
+  
+  .remote-qr {
+    width: 100%;
+    max-width: 260px;
+    align-self: center;
+    background: #fff;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  .remote-url {
+    font-family: monospace;
+    font-size: 12px;
+    text-align: center;
+    color: var(--accent);
+    padding: 8px;
+    background: var(--bg-2);
+    border-radius: 4px;
+    word-break: break-all;
+  }
+  
+  .remote-connected {
+    font-size: 12px;
+    color: var(--success);
+    text-align: center;
+    font-weight: 500;
+  }
+  
+  .camera-option {
+    padding: 10px 12px;
+    background: var(--bg-2);
+    border-radius: 5px;
+    text-align: left;
+    font-size: 13px;
+    color: var(--text-1);
+    border-left: 3px solid transparent;
+  }
+  
+  .camera-option:hover { background: var(--bg-3); }
+  .camera-option.active {
+    background: rgba(106, 92, 255, 0.15);
+    border-left-color: var(--accent);
+    color: var(--text-0);
+  }
+  
+  .camera-hint {
+    font-size: 12px;
+    color: var(--text-2);
+    padding: 10px;
+    line-height: 1.5;
+    background: var(--bg-2);
+    border-radius: 5px;
+  }
+  
+  .empty {
+    padding: 20px;
+    text-align: center;
+    color: var(--text-2);
+    font-size: 13px;
+  }

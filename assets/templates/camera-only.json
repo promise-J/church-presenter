@@ -1,0 +1,15 @@
+{
+    "id": "camera-only",
+    "name": "Preacher Only",
+    "category": "sermon",
+    "builtin": true,
+    "background": { "type": "color", "value": "#000000" },
+    "zones": [
+      {
+        "id": "camera",
+        "role": "camera",
+        "x": 0, "y": 0, "w": 100, "h": 100,
+        "style": { "objectFit": "cover" }
+      }
+    ]
+  }

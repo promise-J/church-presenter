@@ -1,0 +1,46 @@
+{
+    "id": "dual-translation",
+    "name": "Dual Translation",
+    "category": "scripture",
+    "builtin": true,
+    "background": { "type": "color", "value": "#0a0a14" },
+    "zones": [
+      {
+        "id": "reference",
+        "role": "reference",
+        "x": 5, "y": 5, "w": 90, "h": 6,
+        "style": {
+          "fontSize": 26,
+          "color": "#b8b8d0",
+          "fontWeight": 500,
+          "textAlign": "center"
+        }
+      },
+      {
+        "id": "scripture",
+        "role": "scripture",
+        "x": 5, "y": 13, "w": 90, "h": 40,
+        "style": {
+          "fontSize": 38,
+          "color": "#ffffff",
+          "lineHeight": 1.35,
+          "textAlign": "left",
+          "fontWeight": 400
+        }
+      },
+      {
+        "id": "scripture-alt",
+        "role": "scripture-alt",
+        "x": 5, "y": 54, "w": 90, "h": 40,
+        "style": {
+          "fontSize": 38,
+          "color": "#c8c8dc",
+          "lineHeight": 1.35,
+          "textAlign": "left",
+          "fontWeight": 400,
+          "borderTop": "1px solid #2f2f44",
+          "paddingTop": 20
+        }
+      }
+    ]
+  }

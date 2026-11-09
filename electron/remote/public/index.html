@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#0a0a12" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title>Church Presenter — Remote</title>
+  <link rel="stylesheet" href="/remote.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Church Presenter</div>
+    <div class="status" id="status">Connecting…</div>
+  </header>
+
+  <main id="app">
+    <section class="section" id="live-section">
+      <div class="section-label">Now live</div>
+      <div class="live-now" id="live-now">—</div>
+      <div class="live-meta" id="live-meta"></div>
+    </section>
+
+    <section class="controls">
+      <button class="big-btn" id="btn-prev">◀ Prev</button>
+      <button class="big-btn primary" id="btn-next">Next ▶</button>
+    </section>
+
+    <section class="controls compact">
+      <button class="mid-btn" id="btn-blank">Blank</button>
+      <button class="mid-btn" id="btn-blackout-clear">Un-black</button>
+    </section>
+
+    <section class="section">
+      <div class="section-label">Service</div>
+      <div class="item-list" id="item-list"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-label">Camera</div>
+      <div class="camera-controls">
+        <button class="mid-btn" id="btn-camera">Start Streaming Camera</button>
+        <div class="camera-status" id="camera-status">Idle</div>
+        <video id="camera-preview" playsinline autoplay muted></video>
+      </div>
+    </section>
+  </main>
+
+  <script src="/remote.js"></script>
+</body>
+</html>

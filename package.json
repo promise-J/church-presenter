@@ -1,0 +1,149 @@
+{
+    "name": "church-presenter",
+    "version": "0.1.0",
+    "description": "Offline church presentation app with scripture, camera, songs, media, and phone remote",
+    "author": "Your Church",
+    "license": "MIT",
+    "private": true,
+    "main": "electron/loader.cjs",
+    "type": "module",
+    "scripts": {
+        "dev": "concurrently -k -n VITE,ELECTRON -c cyan,magenta \"vite\" \"wait-on tcp:5173 && electron .\"",
+        "dev:electron": "wait-on tcp:5173 && electron .",
+        "vite": "vite",
+        "start": "electron .",
+        "build": "vite build && electron-builder",
+        "build:win": "vite build && electron-builder --win",
+        "build:mac": "vite build && electron-builder --mac",
+        "build:linux": "vite build && electron-builder --linux",
+        "build:dir": "vite build && electron-builder --dir",
+        "import:bibles": "node scripts/import-bibles.mjs",
+        "rebuild:native": "electron-rebuild -f -w better-sqlite3",
+        "postinstall": "electron-builder install-app-deps"
+    },
+    "dependencies": {
+        "better-sqlite3": "^11.10.0",
+        "electron-store": "^10.0.0",
+        "express": "^4.21.0",
+        "fuse.js": "^7.0.0",
+        "howler": "^2.2.4",
+        "immer": "^10.1.1",
+        "ip": "^2.0.1",
+        "nanoid": "^5.0.7",
+        "qrcode": "^1.5.4",
+        "ws": "^8.18.0",
+        "zustand": "^5.0.0"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-react": "^6.0.0",
+        "concurrently": "^9.0.0",
+        "electron": "^22.0.0",
+        "electron-builder": "^26.5.0",
+        "electron-rebuild": "^2.0.3",
+        "react": "^18.3.0",
+        "react-dom": "^18.3.0",
+        "vite": "^8.3.4",
+        "wait-on": "^8.0.0"
+    },
+    "build": {
+        "appId": "com.yourchurch.presenter",
+        "productName": "Church Presenter",
+        "copyright": "Copyright © 2025 Your Church",
+        "directories": {
+            "output": "release",
+            "buildResources": "assets"
+        },
+        "files": [
+            "dist/**/*",
+            "electron/**/*",
+            "assets/templates/**/*",
+            "assets/fonts/**/*",
+            "assets/icons/**/*",
+            "package.json",
+            "!**/*.map",
+            "!**/node_modules/*/{CHANGELOG.md,README.md,readme.md,test,__tests__}"
+        ],
+        "extraResources": [
+            {
+                "from": "assets/bibles",
+                "to": "bibles",
+                "filter": [
+                    "**/*.db",
+                    "**/*.db-shm",
+                    "**/*.db-wal",
+                    "!.gitkeep"
+                ]
+            },
+            {
+                "from": "assets/templates",
+                "to": "templates",
+                "filter": [
+                    "**/*.json"
+                ]
+            }
+        ],
+        "asar": true,
+        "asarUnpack": [
+            "**/node_modules/better-sqlite3/**/*"
+        ],
+        "win": {
+            "target": [
+                {
+                    "target": "nsis",
+                    "arch": [
+                        "x64"
+                    ]
+                }
+            ],
+            "icon": "assets/icons/icon.ico"
+        },
+        "nsis": {
+            "oneClick": false,
+            "allowToChangeInstallationDirectory": true,
+            "createDesktopShortcut": true,
+            "createStartMenuShortcut": true,
+            "shortcutName": "Church Presenter"
+        },
+        "mac": {
+            "target": [
+                {
+                    "target": "dmg",
+                    "arch": [
+                        "x64",
+                        "arm64"
+                    ]
+                }
+            ],
+            "icon": "assets/icons/icon.icns",
+            "category": "public.app-category.productivity"
+        },
+        "linux": {
+            "target": [
+                {
+                    "target": "AppImage",
+                    "arch": [
+                        "x64"
+                    ]
+                },
+                {
+                    "target": "deb",
+                    "arch": [
+                        "x64"
+                    ]
+                }
+            ],
+            "icon": "assets/icons",
+            "category": "Utility"
+        }
+    },
+    "engines": {
+        "node": ">=18.0.0"
+    },
+    "allowScripts": {
+        "better-sqlite3@11.10.0": true,
+        "fsevents@2.3.3": true,
+        "electron-winstaller@5.4.0": true,
+        "lzma-native@6.0.1": true,
+        "electron@22.3.27": true
+    }
+}

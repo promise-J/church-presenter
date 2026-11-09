@@ -1,0 +1,40 @@
+{
+    "id": "scripture-camera",
+    "name": "Scripture + Preacher",
+    "category": "sermon",
+    "builtin": true,
+    "background": { "type": "color", "value": "#0a0a14" },
+    "zones": [
+      {
+        "id": "camera",
+        "role": "camera",
+        "x": 0, "y": 0, "w": 100, "h": 55,
+        "style": { "objectFit": "cover" }
+      },
+      {
+        "id": "reference",
+        "role": "reference",
+        "x": 4, "y": 56, "w": 92, "h": 6,
+        "style": {
+          "fontSize": 24,
+          "color": "#b8b8d0",
+          "fontWeight": 500,
+          "textAlign": "left",
+          "letterSpacing": "0.5px",
+          "paddingTop": 16
+        }
+      },
+      {
+        "id": "scripture",
+        "role": "scripture",
+        "x": 4, "y": 63, "w": 92, "h": 34,
+        "style": {
+          "fontSize": 40,
+          "color": "#ffffff",
+          "lineHeight": 1.35,
+          "textAlign": "left",
+          "fontWeight": 400
+        }
+      }
+    ]
+  }

@@ -1,0 +1,22 @@
+{
+    "id": "countdown",
+    "name": "Countdown Timer",
+    "category": "utility",
+    "builtin": true,
+    "background": { "type": "color", "value": "#0a0a14" },
+    "zones": [
+      {
+        "id": "countdown",
+        "role": "countdown",
+        "x": 0, "y": 30, "w": 100, "h": 40,
+        "style": {
+          "fontSize": 200,
+          "color": "#ffffff",
+          "fontWeight": 200,
+          "textAlign": "center",
+          "letterSpacing": "8px",
+          "fontVariantNumeric": "tabular-nums"
+        }
+      }
+    ]
+  }

@@ -1,0 +1,15 @@
+{
+    "id": "media-full",
+    "name": "Media — Full Screen",
+    "category": "media",
+    "builtin": true,
+    "background": { "type": "color", "value": "#000000" },
+    "zones": [
+      {
+        "id": "media",
+        "role": "media",
+        "x": 0, "y": 0, "w": 100, "h": 100,
+        "style": { "objectFit": "contain", "background": "#000" }
+      }
+    ]
+  }

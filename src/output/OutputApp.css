@@ -1,0 +1,70 @@
+html, body, #root {
+    background: #000;
+    /* cursor: none; */
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .output-root {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  
+  .output-blackout { width: 100vw; height: 100vh; background: #000; }
+  
+  .output-blank {
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .blank-indicator {
+    color: #1a1a1a;
+    font-size: 20px;
+    letter-spacing: 8px;
+    font-weight: 600;
+  }
+  
+  .output-idle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+  }
+  
+  .idle-text {
+    font-size: 72px;
+    color: white;
+    /* color: #2a2a3a; */
+    font-weight: 200;
+    letter-spacing: 4px;
+  }
+  
+  .output-zone { position: absolute; }
+  
+  .zone-scripture p {
+    margin: 0;
+  }
+  
+  .zone-scripture sup {
+    vertical-align: super;
+  }
+  
+  .zone-camera video {
+    display: block;
+  }
+  
+  .zone-notes p:last-child { margin-bottom: 0; }
+  
+  .zone-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }

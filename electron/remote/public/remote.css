@@ -1,0 +1,202 @@
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+:root {
+  --bg: #0a0a12;
+  --bg-1: #14141f;
+  --bg-2: #1c1c2a;
+  --bg-3: #262638;
+  --border: #2f2f44;
+  --text: #f0f0f8;
+  --text-2: #b8b8d0;
+  --text-3: #7a7a95;
+  --accent: #6a5cff;
+  --accent-hover: #8577ff;
+  --danger: #e74c3c;
+  --success: #2ecc71;
+}
+
+html, body {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 16px;
+  overscroll-behavior: contain;
+}
+
+body { padding-bottom: env(safe-area-inset-bottom); }
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  background: var(--bg-1);
+  border-bottom: 1px solid var(--border);
+  padding-top: calc(14px + env(safe-area-inset-top));
+}
+
+.brand { font-weight: 600; font-size: 15px; letter-spacing: 0.3px; }
+.status { font-size: 12px; color: var(--text-3); }
+.status.ok { color: var(--success); }
+.status.err { color: var(--danger); }
+
+main { padding: 16px; display: flex; flex-direction: column; gap: 20px; }
+
+.section-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text-3);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.live-now {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text);
+  padding: 14px 16px;
+  background: var(--bg-2);
+  border-radius: 10px;
+  border-left: 4px solid var(--accent);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.live-meta {
+  font-size: 12px;
+  color: var(--text-3);
+  margin-top: 6px;
+  padding-left: 4px;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.controls.compact {
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.big-btn {
+  padding: 22px 20px;
+  font-size: 20px;
+  font-weight: 700;
+  background: var(--bg-2);
+  color: var(--text);
+  border: none;
+  border-radius: 12px;
+  letter-spacing: 0.5px;
+  transition: background 0.1s, transform 0.05s;
+  touch-action: manipulation;
+}
+
+.big-btn:active { transform: scale(0.97); background: var(--bg-3); }
+.big-btn.primary { background: var(--accent); }
+.big-btn.primary:active { background: var(--accent-hover); }
+.big-btn:disabled { opacity: 0.4; }
+
+.mid-btn {
+  padding: 16px;
+  font-size: 15px;
+  font-weight: 600;
+  background: var(--bg-2);
+  color: var(--text);
+  border-radius: 10px;
+  border: none;
+  transition: background 0.1s, transform 0.05s;
+  touch-action: manipulation;
+}
+
+.mid-btn:active { transform: scale(0.97); background: var(--bg-3); }
+.mid-btn.active { background: var(--accent); }
+.mid-btn:disabled { opacity: 0.4; }
+
+.item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 45vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.item-row {
+  padding: 12px 14px;
+  background: var(--bg-2);
+  border-radius: 8px;
+  border-left: 3px solid transparent;
+  text-align: left;
+  color: var(--text-2);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.1s;
+  border: none;
+  width: 100%;
+  touch-action: manipulation;
+}
+
+.item-row:active { background: var(--bg-3); }
+.item-row.live {
+  background: rgba(106, 92, 255, 0.18);
+  border-left-color: var(--accent);
+  color: var(--text);
+}
+
+.item-order {
+  font-size: 11px;
+  color: var(--text-3);
+  font-weight: 600;
+  min-width: 20px;
+}
+
+.item-title {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.item-slide {
+  font-size: 11px;
+  color: var(--text-3);
+}
+
+.empty {
+  padding: 20px;
+  text-align: center;
+  color: var(--text-3);
+  font-size: 13px;
+}
+
+.camera-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.camera-status {
+  font-size: 12px;
+  color: var(--text-3);
+}
+
+#camera-preview {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-radius: 10px;
+  object-fit: cover;
+  display: none;
+}
+
+#camera-preview.on { display: block; }

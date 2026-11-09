@@ -1,0 +1,30 @@
+{
+    "id": "media-with-caption",
+    "name": "Media + Caption",
+    "category": "media",
+    "builtin": true,
+    "background": { "type": "color", "value": "#000000" },
+    "zones": [
+      {
+        "id": "media",
+        "role": "media",
+        "x": 0, "y": 0, "w": 100, "h": 78,
+        "style": { "objectFit": "contain", "background": "#000" }
+      },
+      {
+        "id": "scripture",
+        "role": "scripture",
+        "x": 0, "y": 78, "w": 100, "h": 22,
+        "style": {
+          "background": "rgba(0,0,0,0.9)",
+          "fontSize": 34,
+          "color": "#ffffff",
+          "lineHeight": 1.35,
+          "textAlign": "center",
+          "paddingTop": 20,
+          "paddingLeft": 40,
+          "paddingRight": 40
+        }
+      }
+    ]
+  }

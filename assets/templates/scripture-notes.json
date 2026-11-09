@@ -1,0 +1,45 @@
+{
+    "id": "scripture-notes",
+    "name": "Scripture + Side Notes",
+    "category": "sermon",
+    "builtin": true,
+    "background": { "type": "color", "value": "#0a0a14" },
+    "zones": [
+      {
+        "id": "scripture",
+        "role": "scripture",
+        "x": 4, "y": 10, "w": 62, "h": 82,
+        "style": {
+          "fontSize": 46,
+          "color": "#ffffff",
+          "lineHeight": 1.4,
+          "textAlign": "left",
+          "fontWeight": 400
+        }
+      },
+      {
+        "id": "reference",
+        "role": "reference",
+        "x": 4, "y": 4, "w": 62, "h": 5,
+        "style": {
+          "fontSize": 26,
+          "color": "#b8b8d0",
+          "fontWeight": 500,
+          "textAlign": "left"
+        }
+      },
+      {
+        "id": "notes",
+        "role": "notes",
+        "x": 68, "y": 0, "w": 32, "h": 100,
+        "style": {
+          "background": "rgba(20, 20, 31, 0.9)",
+          "fontSize": 22,
+          "color": "#d8d8e8",
+          "lineHeight": 1.55,
+          "padding": 40,
+          "borderLeft": "2px solid #2f2f44"
+        }
+      }
+    ]
+  }
